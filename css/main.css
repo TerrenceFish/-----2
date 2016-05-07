@@ -1,0 +1,511 @@
+body{
+	margin:0;
+	padding:0;
+	overflow: hidden;
+	-webkit-font-smoothing:antialiased;/* 反锯齿效果，是英文字更圆滑 */ 
+    -moz-font-smoothing:antialiased;
+    -o-font-smoothing:antialiased;
+    -ms-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+.clr{
+	width: 0;
+	height:0;
+	overflow: hidden;
+	clear: both;
+	padding:0;
+	margin: 0;
+}
+.radionav{
+	width:100%;
+	height:100%;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.radionav > input,.radionav > a{
+	width:20%;
+	height:34px;
+	line-height: 34px;
+	position: fixed;
+	bottom:0;
+}
+.radionav>input{
+	opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.radionav a{
+	color:white;
+	font-weight: 700;
+	font-size: 16px;
+	text-decoration: none;
+	text-align: center;
+	
+	text-shawdow:1px 1px 2px rgba(151,24,64,0.2);
+	z-index: 50;
+}
+.acolor{background: #e23a6e;}
+#rad1,#rad1+a{
+	left:0%;
+}
+#rad2,#rad2+a{
+	left:20%;
+}
+#rad3,#rad3+a{
+	left:40%;
+}
+#rad4,#rad4+a{
+	left:60%;
+}
+#rad5,#rad5+a{
+	left:80%;
+}
+.radionav input:checked + a{
+	background:#821134;
+}
+/* 添加三角形 */
+.radionav input:checked + a:after{
+	content: "";
+	width:0;
+	height:0;
+	overflow: hidden;
+	position: absolute;
+	bottom: 100%;
+	left:42%;
+	/* margin-left:20px; */
+	border:20px solid transparent;
+	border-bottom-color:#821134; 
+}
+/* page样式 */
+.page,.allst{
+	width:100%;
+	height:100%;
+	position: relative;
+}
+.allst{
+	overflow: hidden;
+	z-index: -200;
+}
+ .page{
+	left:0;
+	top:0;
+	-webkit-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    -0-transform:translate3d(0,0,0);
+    -ms-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+    -webkit-backface-visibility:hidden;不面向屏幕的可见性
+    -moz-backface-visibility:hidden;
+    -0-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    backface-visibility:hidden;
+    -webkit-transition:all 0.6s ease-in-out;
+    -moz-transition:all 0.6s ease-in-out;
+    -o-transition:all 0.6s ease-in-out;
+    -ms-transition:all 0.6s ease-in-out;
+    transition:all 0.6s ease-in-out;
+}
+#rad1:checked ~ .page{
+	-webkit-transform:translateY(0%);
+	-moz-transform:translateY(0%);
+	-o-transform:translateY(0%);
+	-ms-transform:translateY(0%);
+	transform:translateY(0%);
+}
+#rad2:checked ~ .page{
+    -webkit-transform:translateY(-100%);
+    -moz-transform:translateY(-100%);
+    -o-transform:translateY(-100%);
+    -ms-transform:translateY(-100%);
+    transform:translateY(-100%);
+} 
+#rad3:checked ~ .page{
+    -webkit-transform:translateY(-200%);
+    -moz-transform:translateY(-200%);
+    -o-transform:translateY(-200%);
+    -ms-transform:translateY(-200%);
+    transform:translateY(-200%);
+} 
+#rad4:checked ~ .page{
+    -webkit-transform:translateY(-300%);
+    -moz-transform:translateY(-300%);
+    -o-transform:translateY(-300%);
+    -ms-transform:translateY(-300%);
+    transform:translateY(-300%);
+} 
+#rad5:checked ~ .page{
+    -webkit-transform:translateY(-400%);
+    -moz-transform:translateY(-400%);
+    -o-transform:translateY(-400%);
+    -ms-transform:translateY(-400%);
+    transform:translateY(-400%);
+} 
+/* page内容样式  */
+.head{
+	width:100%;
+	height:30%;
+	background: #3D95D5;
+}
+/* 旋转头像样式 */
+.demo,.img,.border{
+			width: 300px;
+			height: 300px;
+		}
+	.demo{
+		display: block;
+		position: relative;
+		margin:0 auto;
+		z-index: 1000; 
+	}
+	.border{
+		    width:308px;
+		    height:308px;
+			position: absolute;
+			border: 10px solid #072256;
+			border-left-color:orange;
+			border-bottom-color:orange;
+            border-top-color:#BA55D3;
+            border-right-color:#BA55D3;
+			top: 9px;
+			left: -2px;
+			border-radius: 50%;
+			-webkit-transition:all .5s ease-in;
+			transition:all .5s ease-in;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+		}
+	.img{
+		position: absolute;
+		margin-top: 10px;
+		border-style: solid;
+		border-radius: 50%;
+	}
+	img{
+		width:100%;
+		height:100%;
+		margin:0 auto;
+		border-radius: 50%;
+		box-sizing:border-box;
+		-webkit-transition:all .5s ease-in; 
+	}
+    .word{
+    	position: absolute;
+    	top:118px;
+    	left:62px; 
+    	color:rgba(255,255,255,0);
+    	-webkit-transition:all .5s ease-in; 
+    }
+    .demo:hover .word{
+             color:rgba(255,255,255,1);
+    }
+    .demo:hover .border{
+    	-webkit-transform:rotate(180deg);
+    }
+    .demo:hover img{
+    	opacity: 0.8;
+    }
+   /*  学校信息样式 */
+   .school{
+   	width:100%;
+   	height:70%;
+    position: relative;
+   }
+   .leftdiv{
+    width:38%;
+    height:100%;
+    position: absolute;   
+  }
+    #slide{
+	width:100%;
+	height:100%;
+	position: absolute;
+}
+    #slide>ul{
+	list-style:none;
+	width:100%;
+	height:100%;
+	position: absolute;
+}
+    #slide>ul li{
+    position: absolute;
+	width:100%;
+	box-sizing:border-box;
+	margin-left:-40px;
+}
+    #slide>ul li img{
+	border-radius: 0;
+	width:100%;
+}
+.rightdiv{
+	width:62%;
+	height:100%;
+	position: absolute;
+	left:38%;
+	background: #75625E;
+}
+.rightdiv h3{
+	position: absolute;
+	left:42%;
+	color:white;
+	font-size: 28px;
+	font-weight: 800;
+}
+.rightdiv dl{
+    width:auto;
+    height:40px;
+    float:left;
+    margin-left:50px;
+  }
+.rightdiv dl dd{
+        height:18px;
+        line-height:18px;
+        border-bottom: 1px solid #333;
+        margin-left:80px;
+        margin-top:-20px;
+        color:white;
+        text-align: center;
+  }
+.wrap{
+  	margin-top:140px;
+  }
+  /* 专业信息 */
+#major{
+	background:  #42426F;
+}
+#rad2:checked ~  .page #major{
+	 opacity: 0.8; 
+}
+#major h3{
+	color:white;
+	font-weight: 700;
+	font-size: 20px;
+	-webkit-transition:all 0.6s ease-in-out 1s;/* 延迟1s执行动画,不会影响页面切换 */
+	-moz-transition:all 0.6s ease-in-out 1s;
+	-o-transition:all 0.6s ease-in-out 1s;
+	-ms-transition:all 0.6s ease-in-out 1s;
+	transition:all 0.6s ease-in-out 1s; 
+    text-align: center;
+     margin-top:50px;
+    /*  偏移要大一点，防止页面缩小对齐影响 */
+     -webkit-transform:translateX(-160%);
+     -moz-transform:translateX(-160%);
+     -o-transform:translateX(-160%);
+     -ms-transform:translateX(-160%);
+     transform:translateX(-160%);  
+}
+#major .paction{
+	width:50%;
+	height:auto;
+	margin:0 auto;
+	color:white;
+	margin-top:50px;
+	-webkit-transition:all 0.6s ease-in-out 1.8s;
+	-moz-transition:all 0.6s ease-in-out 1.8s;
+	-o-transition:all 0.6s ease-in-out 1.8s;
+	-ms-transition:all 0.6s ease-in-out 1.8s;
+	transition:all 0.6s ease-in-out 1.8s;
+	-webkit-transform:translateX(-160%);
+	-moz-transform:translateX(-160%);
+	-o-transform:translateX(-160%);
+	-ms-transform:translateX(-160%);
+	transform:translateX(-160%);   
+}
+/* 貌似一定要加.page */
+#rad2:checked ~  .page #major h3{
+	-webkit-transform:translateX(0);
+	-moz-transform:translateX(0);
+	-o-transform:translateX(0);
+	-ms-transform:translateX(0);
+	transform:translateX(0);
+} 
+/* p动画取消，页面更自然 */
+ #rad2:checked ~  .page #major .paction{
+	-webkit-transform:translateX(0);
+	-moz-transform:translateX(0);
+	-o-transform:translateX(0);
+	-ms-transform:translateX(0);
+	transform:translateX(0);
+} 
+#major .mbottom{
+	width:100%;
+	height:50%;
+	position: absolute;
+	top:180px;
+}
+#major .mbottom p{
+	width:20%;
+	height:180px;
+	float:left;
+	background: white;
+	color:black;
+	margin-left:50px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 6px red;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+/* 熟悉技能 */
+#teac{
+	background: rgb(255,255,225);
+	width:100%;
+	height:100%;
+}
+#teac h3{
+	text-align: center;
+}
+.cardfan{
+  width:30%;
+  height:200px;
+  margin:2rem auto;
+ }
+ .cardfan  img{
+  width:40%;
+  height:40%;
+  position: absolute;
+  border:10px solid #fff;
+  box-sizing:border-box;
+  border-radius: 0;
+  left:28%;
+  top:140px;
+  box-shadow: 4px 4px 3px rgba(0,0,0,0.2);
+  -webkit-transform-origin:center 400px;
+  -webkit-transition: transform .7s ease;
+ }
+  .cardfan .i1{
+    transform:rotate(5deg);
+    border-radius: 0;
+    /* margin-top:-20px; */
+  }
+  .cardfan .i2{border-radius: 0;}
+  .cardfan .i3{
+    transform:rotate(-5deg);
+    border-radius: 0;
+  }
+  .cardfan:hover .i1{
+    transform:rotate(25deg);
+  }
+  .cardfan:hover .i3{
+    transform:rotate(-25deg);
+  }
+  .learn p{
+  	color:gray;
+  	font-size: 16px;
+  	font-weight: 800;
+  	margin-top:280px;
+  }
+/* 生活，爱好 */
+#life{
+	background: #42426F;
+}
+#rad4:checked ~  .page #life{
+	 opacity: 0.8; /* 点击到该页面之后改变背景透明度 */
+}
+#life h3{
+	color:white;
+	font-size: 22px;
+	font-weight: 800;
+	text-align: center;
+	margin-top:50px;
+}
+#life .lifepic{
+	width:80%;
+	height:520px;
+	margin:0 auto;
+	margin-top:5px;
+	position: absolute;
+	left:10%;
+	overflow: hidden;
+} 
+.lifepic img{
+	border-radius: 0;
+	width:100%;
+	height:100%;
+}
+.carousel-control .left{
+	margin-top: 100px;
+}
+/* 联系方式 */
+#contact{
+	width:100%;
+	background: rgb(255,255,225);
+}
+/*  #contact h3{
+	width:200px;
+	height:auto;
+	margin:0px 45%;
+	top:50px;
+	text-align: center;
+	font-weight: 800;
+	position: absolute;
+	-webkit-transform:translateY(-250px);向上移动250px
+	-moz-transform:translateY(-250px);
+	-ms-transform:translateY(-250px); 
+	-o-transform:translateY(-250px);
+	transform:translateY(-250px);
+   -webkit-transition:all 0.6s ease-in 1.4s;
+   -moz-transition:all 0.6s ease-in 1.4s;
+   -o-transition:all 0.6s ease-in 1.4s;
+   -ms-transition:all 0.6s ease-in 1.4s;
+   transition:all 0.6s ease-in 1.4s;
+} */
+/*  #rad5:checked ~  .page #contact h3{
+-webkit-transform:translateY(0px);
+}  */
+/* 选项卡  */
+#contact .tab{
+	padding:0;
+	list-style:none;
+	width:1600px;
+	top:300px;
+	left:14%;
+	position: absolute; 
+	overflow:hidden;
+}
+#contact .tab li{
+	float:left;
+	width:100px;
+	height:80px;
+	/* box-shadow: 1px 1px 8px gray;  */
+	text-align:center;
+	line-height:30px;
+	cursor:pointer; 
+}
+.tab #li1{
+	background: url("images/qq1.png") no-repeat;
+	background-position: center;
+}
+.tab #li1:hover{
+	background: url("images/qq2.png") no-repeat;
+    background-position: center;
+}
+.tab #li2{
+	background: url("images/phone1.png") no-repeat;
+	background-position: center;
+}
+.tab #li2:hover{
+	background: url("images/phone2.png") no-repeat;
+    background-position: center;
+}
+#contact div{display: none;}
+ #contact .on{
+	background: white;
+	width:200px;
+	height:200px;
+	line-height: 120px;
+	text-align: center;
+	top:180px;
+	left:14%;
+	border-radius: 10px;
+	box-shadow: 1px 1px 8px white; 
+	position: absolute;
+	display:block;
+} 
+#contact div p{
+	background: url("images/arrow_blue.png") no-repeat;
+    background-position: 34px center;
+}
+/* swiper动画 */
+#contact .swiper-container{display: block;position: absolute;top:30px;left:43%;}
+#contact .swiper-container .swiper-wrapper{display: block;}
+#contact .swiper-container .swiper-wrapper .swiper-slide {background:none;display: block;font-size: 20px;font-weight: 800;}
